@@ -64,27 +64,6 @@ const grades = [
     },
 ]
 function Navigator({ children }) {
-<<<<<<< HEAD
-    const [adder, setAdder] = useState(false)
-    const addervarient = {
-        initial: {
-            width: 0,
-            opacity: 0,
-            transition: { duration: .5, ease: 'linear' }
-        },
-        enter: {
-            width: '100%',
-            opacity: 1,
-            transition: { duration: .5, ease: 'linear' }
-        },
-    };
-    const addermenuref = useRef('')
-    useEffect(()=>{
-        let handler = (e)=>{
-            if (!addermenuref.current){
-                setAdder(false)
-                console.log(addermenuref.current);
-=======
     const { setnav, nav } = useContext(UserContext)
     const [grade, setGrade] = useState(grades[0])
     const [showgrade, setShowGrade] = useState(false)
@@ -99,22 +78,12 @@ function Navigator({ children }) {
                 }
             } catch (error) {
                 return
->>>>>>> 43fa50a7654fb05986509d0f20d647110adf7df6
             }
         }
         window.addEventListener('mousedown', handler)
     })
 
     return (
-<<<<<<< HEAD
-        <div className='w-screen h-fit'>
-            <div className="flex items-center justify-between px-10 py-4">
-                <div className="flex items-center justify-center gap-2 ">
-                    <Image className='' src={'/icons/menu.svg'} height={30} width={30} alt='menu' />
-                    <div className="flex items-center justify-center gap-2 ">
-                        <Image src={'/logos/logo.svg'} height={30} width={30} alt='logo' />
-                        <h1 className='text-lg font-bold tex-gray-900'>Edulearn</h1>
-=======
         <div className='w-screen h-full'>
             <div className="flex px-10 py-4 justify-between items-center">
                 <div className=" flex items-center justify-center gap-2">
@@ -122,36 +91,12 @@ function Navigator({ children }) {
                     <div className=" flex items-center justify-center gap-2">
                         <Image src={'/logos/logo.svg'} height={30} width={30} alt='logo' />
                         <h1 className='font-bold tex-gray-900 text-lg md:flex hidden'>Edulearn</h1>
->>>>>>> 43fa50a7654fb05986509d0f20d647110adf7df6
                     </div>
                 </div>
                 <div className="md:flex hidden bg-[#92D1CD99] px-2 rounded-lg items-center">
                     <InlineIcon className='text-gray-600' icon="tdesign:search" height="25" width="25" />
                     <input type="text" className='w-[300px] bg-transparent outline-none px-2 py-1 text-gray-700' placeholder='Search' />
                 </div>
-<<<<<<< HEAD
-                <div className="flex">
-                    <select className='px-2 py-2 rounded-lg bg-white shadow-[0px_0px_2px_0px_var(--green-mild)] ' name="" id="">
-                        <option value="1">Grade 1 </option>
-                        <option value="add"> Add Grade </option>
-                    </select>
-                </div>
-            </div>
-            <div className="flex">
-                <div className="navbar min-w-[300px] h-screen">
-                    <div className="w-[100%] flex justify-center">
-                        <ul className='flex flex-col justify-center gap-0 py-4 font-light item-center'>
-                            <button onClick={() => setAdder(!adder)} className='bg-white px-2 rounded-full text-[--web-primary-color] hover:text-teal-400 shadow-[0px_0px_4px_0px] shadow-[--web-primary-color] w-fit text-xl flex items-center justify-center gap-3'><InlineIcon icon="ph:plus-bold" height="20" width="20" /> Add Member</button>
-                            {
-                                adder && (
-                                    <motion.div ref={addermenuref} animate={adder ? 'enter' : 'initial'} variants={addervarient} className="py-2 px-4 bg-white flex flex-col gap-2 bg-transparent mt-3 z-[2] relative rounded-lg shadow">
-                                        <button>Add Manually</button>
-                                        <button>Request</button>
-                                    </motion.div>
-                                )
-                            }
-                        </ul>
-=======
                 {
                     mobsearch && (
                         <div className="md:hidden absolute top-0 left-0 w-full z-[4] flex items-center py-4 bg-white px-4 justify-between">
@@ -178,7 +123,6 @@ function Navigator({ children }) {
                                 </div>
                             )
                         }
->>>>>>> 43fa50a7654fb05986509d0f20d647110adf7df6
                     </div>
                 </div>
             </div>
